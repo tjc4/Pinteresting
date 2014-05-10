@@ -1,4 +1,15 @@
 <div class="jumbotron center">
 <h1>The Secret Hangout</h1>
-<p><%= link_to "Sign Up", "#", class: "btn btn-primary btn-lg" %>   <%= link_to "Log In", "#", class: "btn btn-primary btn-lg" %></p>
+
+<%# following code essentially says only show sign up / log in if user is not signed in %>
+
+<% if user_signed_in? %> 
+	#do something
+<% else %>
+	<p>
+		<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>   
+		<%= link_to "Log In", new_user_session_path, class: "btn btn-primary btn-lg" %>
+	</p>
+<% end %>
+
 </div>
